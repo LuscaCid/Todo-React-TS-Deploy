@@ -1,5 +1,6 @@
 import {Container} from './style'
 import { useEffect, useState } from 'react'
+import reactLogo from '../../assets/react.svg'
 import Task from '../../interfaces/TaskInterface'
 interface props {
     taskList : Task[]
@@ -14,7 +15,7 @@ export const Header = ( {taskList} : props) => {
     return (
         <Container>
             <div className="react-img">
-                <img src="src/assets/react.svg" alt="react-logo" />
+                <img src={reactLogo} alt="react-logo" />
             </div>
             <h1>
                 TO-DO react - ts
