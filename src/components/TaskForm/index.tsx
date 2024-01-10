@@ -46,7 +46,7 @@ export const TaskForm = ({handleUpdate,task ,btnTitle, taskList, setTaskList}: P
         const jsonStringfy = JSON.stringify(taskList)
         console.log(jsonStringfy, 'jsonstringfy')
         const jsonParsed = JSON.parse(jsonStringfy)
-        console.log(jsonParsed, 'parsed json')
+        console.log(JSON.parse(jsonStringfy), 'litral')
         localStorage.setItem("@TS-react-todo", JSON.stringify(taskList))
 
     }
