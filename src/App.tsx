@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { Container }  from './style/'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
@@ -40,6 +40,10 @@ function App(){
 
 }
 
+  useEffect(() => {
+    const taskListParsed = localStorage.getItem("@TS-react-todo")
+    console.log(taskListParsed, "parsed")
+  } )
   return (
       <Container>
         <Modal children = {<TaskForm 

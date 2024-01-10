@@ -16,6 +16,7 @@ export const TaskForm = ({handleUpdate,task ,btnTitle, taskList, setTaskList}: P
     const [taskTitle, setTaskTitle] = useState<string | undefined>('')
     const [difficultLevel, setDifficultLevel] = useState<null | number>(0)
     
+    const [StoragedList, setStoragedList] = useState<string>('')
     
     function verifyTitle(taskTitle : string): Task[] {
         const arrWithElement : Task[]= taskList.filter(task => task.title ===taskTitle)
@@ -42,6 +43,12 @@ export const TaskForm = ({handleUpdate,task ,btnTitle, taskList, setTaskList}: P
         setDifficultLevel(0)
         setTaskList!(prevState => [...prevState, newTask ])
         console.log(taskList)
+        const jsonStringfy = JSON.stringify(taskList)
+        console.log(jsonStringfy, 'jsonstringfy')
+        const jsonParsed = JSON.parse(jsonStringfy)
+        console.log(jsonParsed, 'parsed json')
+        localStorage.setItem("@TS-react-todo", JSON.stringify(taskList))
+
     }
     
     const handleChange = (e : ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +58,10 @@ export const TaskForm = ({handleUpdate,task ,btnTitle, taskList, setTaskList}: P
             setDifficultLevel(parseInt(e.target.value))
         }
     }
+
+    useEffect(() => {
+        localStorage.setItem("@TS-react-todo", JSON.stringify(taskList))
+    }, [taskList])
 
     useEffect(() => {
         if(task){
