@@ -1,17 +1,13 @@
 # React + TypeScript + Vite
 
-this project its made for create your own tasks at github theme, more relaxe and simple to see...
+## To run this application at your browser
 
-## made with Vite in typescript, tsx
+cd todo-typescript //folder name
+npm install 
+npm run dev
 
-## for run this project at your self computer
+### this project runs the functionality to make useful in your entire like, ordering the tasks that we have along the life.
 
-git clone <currrent repository>
 
-´´ cd todo-typescript-react
-npm install
-npm run dev ``
 
-and open at the port 5173 in your browser...
-
-### its only available with localStorage, i think to continuos later, in other day with mongo db and a form to create an account and have saved in a database your own tasks.
+repository project to make the deploy on netlify
