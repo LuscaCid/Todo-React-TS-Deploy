@@ -1,17 +1,23 @@
-/*import { useContext, createContext, useMemo, ReactElement } from "react";
+import { useContext, createContext, useMemo, ReactElement } from "react";
 import Task from "../interfaces/TaskInterface";
 
-const AppContext = createContext([]) //contexto de array
-interface Props {
-    children : any
+interface IAppContextProps {
+    memoryArray : Task[]
 }
-function ContextProvider <props>( props  : Props){
 
-    const memoryArray : Task[] = []  
+const memoryArray : Task[] = []  
+const defaultContextValues : IAppContextProps = {
+    memoryArray
+}
+const AppContext = createContext(defaultContextValues) //contexto de array
+interface Props {
+    children : React.ReactNode
+}
+export function ContextProvider( props  : Props){
 
     return (
-        <AppContext.Provider value={}>
+        <AppContext.Provider value={{memoryArray}}>
             {props.children}
         </AppContext.Provider>
     )
-}*/
+}
