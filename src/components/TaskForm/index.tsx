@@ -43,7 +43,7 @@ export const TaskForm = ({handleUpdate,task ,btnTitle, taskList, setTaskList}: P
         setDifficultLevel(0)
         setTaskList!(prevState => [...prevState, newTask ])
         console.log(taskList)
-        const jsonStringfy = JSON.stringify(taskList)
+        const jsonStringfy = JSON.stringify([{title : "aaaa"}, {title : "aaaa"} , {title : "aaaa"}])
         console.log(jsonStringfy, 'jsonstringfy')
         const jsonParsed = JSON.parse(jsonStringfy)
         console.log(JSON.parse(jsonStringfy), 'litral')
